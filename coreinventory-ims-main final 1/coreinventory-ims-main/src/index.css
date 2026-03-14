@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 175 84% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 215 16% 47%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 347 77% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 175 84% 32%;
+    --radius: 0.5rem;
+
+    --sidebar-bg: 222 47% 11%;
+    --sidebar-fg: 210 40% 98%;
+    --sidebar-active: 175 84% 32%;
+    --sidebar-hover: 0 0% 100%;
+
+    --status-pending-bg: 45 93% 94%;
+    --status-pending-fg: 32 81% 29%;
+    --status-completed-bg: 166 76% 94%;
+    --status-completed-fg: 172 61% 25%;
+    --status-cancelled-bg: 210 40% 96%;
+    --status-cancelled-fg: 215 25% 27%;
+    --status-draft-bg: 213 94% 94%;
+    --status-draft-fg: 217 71% 45%;
+
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 175 84% 32%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 175 84% 32%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  .table-container {
+    @apply w-full overflow-hidden rounded-lg bg-card;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.05);
+  }
+  .kpi-card {
+    @apply bg-card rounded-lg p-4;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px -1px rgba(0,0,0,0.1);
+  }
+  .kpi-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+  }
+  .page-header {
+    @apply flex items-center justify-between mb-6;
+  }
+  .page-title {
+    @apply text-2xl font-semibold text-foreground;
+  }
+  .status-pending {
+    @apply px-2 py-0.5 rounded-full text-xs font-medium border;
+    background: hsl(var(--status-pending-bg));
+    color: hsl(var(--status-pending-fg));
+    border-color: hsl(45 80% 85%);
+  }
+  .status-completed {
+    @apply px-2 py-0.5 rounded-full text-xs font-medium border;
+    background: hsl(var(--status-completed-bg));
+    color: hsl(var(--status-completed-fg));
+    border-color: hsl(166 50% 85%);
+  }
+  .status-cancelled {
+    @apply px-2 py-0.5 rounded-full text-xs font-medium border;
+    background: hsl(var(--status-cancelled-bg));
+    color: hsl(var(--status-cancelled-fg));
+    border-color: hsl(var(--border));
+  }
+  .status-draft {
+    @apply px-2 py-0.5 rounded-full text-xs font-medium border;
+    background: hsl(var(--status-draft-bg));
+    color: hsl(var(--status-draft-fg));
+    border-color: hsl(213 80% 85%);
+  }
+  .status-picking {
+    @apply px-2 py-0.5 rounded-full text-xs font-medium border;
+    background: hsl(280 80% 94%);
+    color: hsl(280 60% 35%);
+    border-color: hsl(280 60% 85%);
+  }
+  .status-packing {
+    @apply px-2 py-0.5 rounded-full text-xs font-medium border;
+    background: hsl(200 80% 94%);
+    color: hsl(200 60% 30%);
+    border-color: hsl(200 60% 85%);
+  }
+}
